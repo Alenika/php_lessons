@@ -1,0 +1,8 @@
+# PhpStorm project files
+.idea
+
+# OS files
+.DS_Store
+
+# Composer vendor folder
+vendor/
