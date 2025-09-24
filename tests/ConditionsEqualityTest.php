@@ -9,8 +9,8 @@
 		void
 		{
 			$this -> expectOutputString('+++');
-			include __DIR__.
-				'/../conditions/equality.php';
+			include __DIR__ .
+				'/../conditions/conditions_equality.php';
 		}
 	}
 	
