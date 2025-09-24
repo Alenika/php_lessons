@@ -1,0 +1,12 @@
+{
+    "name": "alenika/php-lessons",
+    "description": "Study project for PHP basics",
+    "type": "project",
+    "require-dev": {
+        "phpunit/phpunit": "^10"
+    },
+    "require": {},
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    }
+}
