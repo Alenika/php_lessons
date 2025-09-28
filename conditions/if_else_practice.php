@@ -57,3 +57,15 @@
 	$str = (string)$num;
 	$sum = $str[0] + $str[1] + $str[2];
 	echo $sum . PHP_EOL; // 6
+	
+	/* ---------- №5 ---------- */
+	$num = 111222;
+	$str = (string)$num;
+	$left_3 = $str[0] + $str[1] + $str[2];
+	$right_3 = $str[3] + $str[4] + $str[5];
+	
+	if ($left_3 === $right_3) {
+		echo '+++' . PHP_EOL;
+	} else {
+		echo '---' . PHP_EOL; // ---
+	}
