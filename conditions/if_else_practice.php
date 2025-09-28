@@ -36,3 +36,20 @@
 			echo 'Неверное значение';
 	}
 	echo $month . PHP_EOL; // Лето 8
+	
+	/* ---------- №2 ---------- */
+	$str = 'abcde';
+	if ($str[0] === 'a') {
+		echo '+++' . PHP_EOL; // +++
+	} else '---' . PHP_EOL;
+	
+	/* ---------- №3 ---------- */
+	$int = 12345;
+	$str = (string)$int;
+	if ($str[0] === '1' or $str[0] === '2' or $str[0] === '3') {
+		echo '+++' . PHP_EOL; // +++
+	} else {
+		echo '---' . PHP_EOL;
+	}
+	
+	
