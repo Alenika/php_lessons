@@ -12,5 +12,10 @@
 	
 	// ⊗ppPmLpFe №2
 	foreach ($arr as $elem) {
-		echo $elem . "<br>"; // 1 2 3 4 5
+		echo $elem . '<br>'; // 1 2 3 4 5
+	}
+	
+	// ⊗ppPmLpFe №3
+	foreach ($arr as $elem) {
+		echo '<b>' . $elem . '</b><br>';
 	}
