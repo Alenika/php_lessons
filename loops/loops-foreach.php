@@ -10,3 +10,7 @@
 		echo $elem ** 2 . PHP_EOL; // 1 4 9 16 25
 	}
 	
+	// ⊗ppPmLpFe №2
+	foreach ($arr as $elem) {
+		echo $elem . "<br>"; // 1 2 3 4 5
+	}
