@@ -36,4 +36,15 @@
 		}
 	}
 	
-	echo $sum; // 17
+	echo $sum . ' '; // 17
+	
+	/* ------ №4 ------ */
+	
+	$arr = [10, 20, 30, 50, 235, 3000];
+	
+	foreach ($arr as $elem) {
+		$first = (string)$elem;
+		if ($first[0] === '1' or $first[0] === '2' or $first[0] === '5') {
+			echo $elem . ' '; // 10 20 50 235
+		}
+	}
