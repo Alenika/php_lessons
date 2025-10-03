@@ -24,3 +24,16 @@
 			echo $elem . ' '; // 5, 9, 4
 		}
 	}
+	
+	/* ------ №3 ------ */
+
+	$arr = [1, 2, -3, -4, 6, 8, -9];
+	$sum = 0;
+	
+	foreach ($arr as $elem) {
+		if ($elem > 0) {
+			$sum += $elem;
+		}
+	}
+	
+	echo $sum; // 17
