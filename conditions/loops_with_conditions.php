@@ -69,6 +69,15 @@
 		}
 	}
 	
+	/* ------ №6 ------ */
+	$day = 5;
 	
+	foreach ($arr as $key => $elem) {
+		if ($key === 5) {
+			echo "<i>$elem</i>" . ' ';
+		} else {
+			echo $elem . ' ';
+		}
+	}
 	
 
