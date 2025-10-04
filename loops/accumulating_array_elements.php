@@ -38,7 +38,20 @@
 		$res += ($elem ** 2);
 	}
 	
-	echo $res . ' ';
+	echo $res . ' '; // 136
+	
+	/* ---------- №4 ---------- */
+	
+	$arr = [2, 5, 9, 3, 1, 4];
+	$res = 1;
+	
+	foreach ($arr as $elem) {
+		$res *= $elem;
+	}
+
+	echo $res . ' '; // 1000
+
+
 	
 
 	
