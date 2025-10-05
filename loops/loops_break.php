@@ -41,3 +41,15 @@
 	}
 	
 	/* ------- №4 ------- */
+	
+	$sum = 0;
+	$count = 0;
+	$num = 1;
+	
+	while ($sum <= 100) {
+		$sum += $num;
+		$num++;
+		$count++;
+	}
+	
+	echo $count; // 14
