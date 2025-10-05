@@ -31,4 +31,13 @@
 	echo $sum; // 10
 	
 	/* ------- №3 ------- */
+	$arr = [1, 2, 3, 4, 5];
+	
+	foreach ($arr as $key => $elem) {
+		if ($elem == 3) {
+			echo $key; // 2
+			break;
+		}
+	}
+	
 	/* ------- №4 ------- */
