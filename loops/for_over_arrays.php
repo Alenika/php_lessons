@@ -14,3 +14,10 @@
 		echo $arr[$i]; // abcde
 	}
 	
+	/* ----------  №2  ---------- */
+
+	for ($i = 0; $i < $length - 1; $i++) {
+			echo $arr[$i]; // abcd
+	}
+
+	
