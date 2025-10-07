@@ -134,3 +134,20 @@
 		$sum_elem += $elem;
 	}
 	echo $sum_keys / $sum_elem;
+	
+	// №15
+	$arr = [
+		'a' => 1,
+		'b' => 2,
+		'c' => 3,
+		'd' => 4,
+		'e' => 5
+	];
+	$arr_keys = [];
+	$arr_elem = [];
+	foreach ($arr as $key => $elem) {
+		$arr_elem[] = $elem;
+		$arr_keys[] = $key;
+	}
+	var_dump($arr_keys);
+	var_dump($arr_elem);
