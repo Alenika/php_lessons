@@ -35,3 +35,12 @@
 		$arr[] = $i + 1;
 		echo $arr[$i];
 	}
+	
+	// №6
+	$arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+	foreach ($arr as $elem) {
+		if ($elem > 0 and $elem < 10) {
+			echo $elem;
+		}
+	}
+
