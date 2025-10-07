@@ -28,3 +28,10 @@
 		$arr[] = 'x';
 		echo $arr[$i];
 	}
+	
+	// №5
+	$arr = [];
+	for ($i = 0; $i < 10; $i++) {
+		$arr[] = $i + 1;
+		echo $arr[$i];
+	}
