@@ -118,3 +118,19 @@
 		}
 	}
 	var_dump($arr);
+	
+	// №14
+	$arr = [
+		1 => 6,
+		2 => 7,
+		3 => 8,
+		4 => 9,
+		5 => 10
+	];
+	$sum_keys = 0;
+	$sum_elem = 0;
+	foreach ($arr as $key => $elem) {
+		$sum_keys += $key;
+		$sum_elem += $elem;
+	}
+	echo $sum_keys / $sum_elem;
