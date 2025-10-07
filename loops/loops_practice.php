@@ -151,3 +151,23 @@
 	}
 	var_dump($arr_keys);
 	var_dump($arr_elem);
+	
+	// №16
+	$arr = [
+		1 => 125,
+		2 => 225,
+		3 => 128,
+		4 => 356,
+		5 => 145,
+		6 => 281,
+		7 => 452,
+	];
+	$new_arr = [];
+	foreach ($arr as $key => $elem) {
+		$str = (string)$elem;
+		$first = $str[0];
+		if ($first === '1' or $first === '2') {
+			$new_arr[] = $elem;
+		}
+	}
+	var_dump($new_arr);
