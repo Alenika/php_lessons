@@ -33,3 +33,24 @@
 	];
 	
 	echo $arr['en'][2]; // wd
+	
+	/* ---------- №3 ---------- */
+	$arr = [
+		[
+			'name'=>'user1',
+			'age'=>30,
+			'salary'=>1000,
+		],
+		[
+			'name'=>'user2',
+			'age'=>31,
+			'salary'=>2000,
+		],
+		[
+			'name'=>'user3',
+			'age'=>32,
+			'salary'=>3000,
+		],
+	];
+	
+	echo $arr[0]['salary'] + $arr[2]['salary']; // 4000
