@@ -3,6 +3,7 @@
 	 * Перебор многомерных массивов в PHP
 	 */
 
+	// Повтор задачи (коммит 58), ошибка с циклом и в условии
 	// ⊗ppPmMdIt
 
 	/* ------------- №1 ------------- */
@@ -16,11 +17,9 @@
 	$sum = 0;
 	
 	foreach ($arr as $sub2) {
-		foreach ($arr as $sub3) {
-			foreach ($sub3 as $elem) {
-				$sum +=$elem;
-			}
+		foreach ($sub2 as $elem) {
+				$sum += $elem;
 		}
 	}
 	
-	echo $sum; // 135
+	echo $sum; // 45
