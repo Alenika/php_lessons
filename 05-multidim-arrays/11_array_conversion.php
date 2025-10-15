@@ -43,11 +43,15 @@
 	foreach ($arr as $elem) {
 		$country = $elem['country'];
 		$city = $elem['city'];
-		$res[$country][$city] = $city;
+		$res[$country][] = $city; // просто список городов
+		
+		// $res[$country][$city] = $city; город становился ключом
 	}
 	
+	echo '<pre>';
 	var_dump($res);
-	
+	echo '<pre>';
+
 	// №2
 
 	$arr = [
@@ -95,7 +99,9 @@
 		$res[$elem['date']][] = $elem['event'];
 	}
 	
+	echo '<pre>';
 	var_dump($res);
+	echo '<pre>';
 	
 	// №3
 
@@ -118,4 +124,6 @@
 		}
 	}
 	
+	echo '<pre>';
 	var_dump($res);
+	echo '<pre>';
