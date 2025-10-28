@@ -38,7 +38,26 @@
 	}
 	
 	print_r(calculate_digit_sum(150)); // 6
-
+	
+	/* ------------- №4 ------------- */
+	function get_current_date() {
+		$day_number = date('N');
+		
+		$days = [
+			1=>'понедельник',
+		    2=>'вторник',
+			3=>'среда',
+			4=>'четверг',
+			5=>'пятница',
+			6=>'суббота',
+			7=>'воскресенье'
+		];
+		
+		return $days[$day_number];
+	}
+	
+	echo get_current_date();
+	
 	
 
 
