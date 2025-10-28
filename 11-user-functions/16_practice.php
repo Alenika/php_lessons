@@ -58,6 +58,26 @@
 	
 	echo get_current_date();
 	
+	/* ------------- №5 ------------- */
+	function get_current_date_word($date) {
+		$timestamp = strtotime($date);
+		$day_number = date('N', $timestamp);
+		
+		$days = [
+			1=>'понедельник',
+			2=>'вторник',
+			3=>'среда',
+			4=>'четверг',
+			5=>'пятница',
+			6=>'суббота',
+			7=>'воскресенье'
+		];
+		
+		return $days[$day_number]; // понедельник
+	}
+	
+	echo get_current_date_word('2025-10-27');
+	
 	
 
 
