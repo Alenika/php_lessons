@@ -16,7 +16,7 @@
 	echo func1() + func2(); // 8
 	
 	/* ------------- №2 ------------- */
-	function sum($arr) {
+	function calculate_sum_array($arr) {
 		$res = 0;
 		
 		foreach ($arr as $elem) {
@@ -26,12 +26,12 @@
 		return $res; // return должен быть вне цикла
 	}
 	
-	echo sum([1, 2, 3, 4, 5]); // 15
+	echo calculate_sum_array([1, 2, 3, 4, 5]); // 15
 	
 	/* ------------- №3 ------------- */
 	$arr = [1, 2, 3, 4, 5];
 	
-	function func($arr) {
+	function print_array_sum($arr) {
 		$res = 0;
 		
 		foreach ($arr as $elem) {
@@ -42,7 +42,7 @@
 	}
 	
 	// Нужно вызвать функцию
-		func($arr); // 15
+		print_array_sum($arr); // 15
 	
 	/* ------------- №4 ------------- */
 	function func11() {
@@ -77,7 +77,8 @@
 	}
 	
 	/* ------------- №7 ------------- */
-	function isPrime($num) {
+	function isPrime($num)
+	{
 		if ($num < 2) {
 			return false; // исключить 0 и 1
 		}
@@ -88,6 +89,7 @@
 			}
 			return true; // нет делителя
 		}
+	}
 		
 	var_dump(isPrime(13)); // должен вывести true
 	var_dump(isPrime(12)); // должен вывести false
