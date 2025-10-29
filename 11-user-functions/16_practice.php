@@ -107,6 +107,23 @@
 	var_dump(is_leap(1900));
 	var_dump(is_leap(2000));
 	
-	
+	/* ------------- №8 ------------- */
+	function is_prime($number) {
+		if ($number <= 1) {
+			return false;
+		}
+		
+		for ($i = 2; $i * $i <= $number; $i++) {
+			if ($number % $i === 0) {
+				return false;
+			}
+		}
+		
+		return true;
+	}
+
+	var_dump(is_prime(13));
+	var_dump(is_prime(12));
+	var_dump(is_prime(1));
 
 
