@@ -78,6 +78,14 @@
 	
 	echo get_current_date_word('2025-10-27');
 	
+	/* ------------- №6 ------------- */
+	function calculate_days_from_sec($seconds) {
+		$seconds_in_day = 86400;
+		return floor($seconds / $seconds_in_day);
+	}
+	
+	echo calculate_days_from_sec('100000');
+	
 	
 
 
