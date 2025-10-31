@@ -5,7 +5,9 @@
     "require-dev": {
         "phpunit/phpunit": "^10"
     },
-    "require": {},
+    "require": {
+      "ext-mbstring": "*"
+    },
     "scripts": {
         "test": "vendor/bin/phpunit"
     }
