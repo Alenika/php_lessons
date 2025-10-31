@@ -110,3 +110,28 @@
 	}
 	
 	print_r(count_vowels_in_array(['Привет', 'Мир', 'PHP']));
+	
+	// Задача №5: Поиск первого счастливого числа
+	// happy_number = сумма цифр делится на 7 без остатка
+	
+	function find_first_lucky_number($limit) {
+		
+		for ($number = 1; $number <= $limit; $number++) {
+			$sum_of_digits = 0;
+			$num_str = (string)$number;
+			$chars = str_split($num_str);
+			
+			foreach ($chars as $char) {
+				$sum_of_digits += (int)$char;
+			}
+			
+			if ($sum_of_digits % 7 === 0) {
+				return $number;
+			}
+		}
+		
+		return 0;
+	}
+	
+	var_dump(find_first_lucky_number(10));
+	var_dump(find_first_lucky_number(1));
