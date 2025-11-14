@@ -22,3 +22,24 @@
 	/* ------------- №4 ------------- */
 	$res_4 = preg_replace('#ab*a#', '!', $str);
 	echo $res_4 . PHP_EOL; //  ! ! ! ! abca abea
+	
+	/* ------------- №5 ------------- */
+	$str_5 = 'a.b a_b a-b a$b';
+	$res_5 = preg_replace('#a.b#', '!', $str_5);
+	echo $res_5 . PHP_EOL;
+	
+	/* ------------- №6 ------------- */
+	$str_6 = 'ax x xa xaa xaaa';
+	$res_6 = preg_replace('#xa+#', '!', $str_6);
+	echo $res_6 . PHP_EOL;
+	
+	/* ------------- №7 ------------- */
+	$str_7 = 'ax x xa xaa xaaa';
+	$res_7 = preg_replace('#xa*#', '!', $str_7);
+	echo $res_7 . PHP_EOL;
+	
+	/* ------------- №8 ------------- */
+	$str_8 = 'x xax xaax xaaax xbx';
+	$res_8 = preg_replace('#xa?x#', '!', $str_8);
+	echo $res_8 . PHP_EOL;
+	
