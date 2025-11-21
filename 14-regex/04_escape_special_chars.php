@@ -21,7 +21,27 @@
 	$res = preg_replace('#a\.x#', '!', $str);
 	
 	echo $res; // ! abx azx
-
+	
+	/* ------------- №2 ------------- */
+	$str = '1+1=2 2*2=4';
+	
+	$res = preg_replace('#1\+1#', '!', $str);
+	
+	echo $res;
+	
+	/* ------------- №3 ------------- */
+	$str = 'a[1] b[2] c[3]';
+	
+	$res = preg_replace('#\[1]#', '!', $str);
+	
+	echo $res;
+	
+	/* ------------- №4 ------------- */
+	$str = '50$ 100$ 200$';
+	
+	$res  = preg_replace('#100\$#', '!', $str);
+	
+	echo $res;
 
 
 	
