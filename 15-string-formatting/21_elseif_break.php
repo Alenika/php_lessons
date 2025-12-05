@@ -16,7 +16,7 @@
 		<p>text1</p>
     </div>
 
-	<?= elseif ($type === 2): ?>
+	<?= elseif ($show === 2): ?>
 	<div>
 		<p>text2</p>
 		<p>text2</p>
