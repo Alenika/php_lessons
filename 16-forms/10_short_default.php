@@ -20,12 +20,14 @@
 
 <?php
 	if (isset($_GET['year'], $_GET['month'], $_GET['day'])) {
-		$inputDate = new DateTime("$year-$month-$day");
-		$newYear   = new DateTime(($year + 1) . '-01-01');
+		$inputTimestamp = mktime(0, 0, 0, $month, $day, $year);
+		$nextYear = $year + 1;
+		$newYearTimestamp = mktime(0, 0, 0,1, 1, $nextYear);
 		
-		$diff = $inputDate->diff($newYear)->days;
+		$secondsDiff = $newYearTimestamp - $inputTimestamp;
+		$daysRemaining = round($secondsDiff / (60 * 60 * 24));
 		
-		echo "До Нового Года осталось $diff дней.";
+		echo "До Нового Года осталось $daysRemaining дней.";
 	}
 
 	
