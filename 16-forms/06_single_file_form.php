@@ -71,3 +71,24 @@
 	}
 ?>
 
+<h3>/* ------------- №4 ------------- */</h3>
+<h3>Приветствие по времени суток</h3>
+<form action="" method="get">
+	<label for="time-hour">Введите час:</label>
+	<input id="time-hour" type="number" name="time_hour">
+	<input type="submit" value="Отправить">
+</form>
+
+<?php
+	if (isset($_GET['time_hour'])) {
+		$hour = (int)$_GET['time_hour'];
+		if ($hour >= 6 && $hour < 12) {
+			echo "Доброе утро!";
+		} elseif ($hour >= 12 && $hour < 18) {
+			echo "Добрый день!";
+		} else {
+			echo "Добрый вечер!";
+		}
+	}
+?>
+
