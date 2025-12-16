@@ -8,20 +8,22 @@
 	/* ------------- №1 ------------- */
 ?>
 
-<form action = "" method = "GET">
-	<input name = "city" value = "
+<form action="" method="GET">
+	<label for="city">Город:</label>
+	<input id="city" type="text" name="city" value="
 	<?php if (isset($_GET['city']))
 			echo $_GET['city'] ?>">
 
-	<input name = "country" value = "
+	<label for="country">Страна:</label>
+	<input id="country" type="text" name="country" value="
 	<?php if (isset($_GET['country']))
 		echo $_GET['country'] ?>">
 	
-	<input type = "submit">
+	<input type="submit" value="Отправить">
 </form>
 
-<?php
-	echo $_GET['city'] . ' ' . $_GET['country'];
+
+
 	
 
 
