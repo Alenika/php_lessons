@@ -22,6 +22,28 @@
 	<input type="submit" value="Отправить">
 </form>
 
+<?php
+	// Сохранение логина и пароля
+	$message = null;
+	
+	if (isset($_POST['login'], $_POST['password'])) {
+		$login = $_POST['login'];
+		echo "Данные успешно отправлены.";
+	}
+?>
+
+<h3>Сохранение логина и пароля</h3>
+<form action="" method="post">
+	<label for="login">Введите логин</label>
+	<input id="login" type="text" name="login" value="
+	<?= $_POST['login'] ?? '' ?>">
+	<label for="password">Введите пароль</label>
+	<input id="password" type="password" name="password">
+	<input type="submit" value="Отправить">
+</form>
+
+
+
 
 
 	
