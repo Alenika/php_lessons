@@ -20,6 +20,12 @@
 	<input type="submit" value="Отправить (POST)">
 </form>
 
+<h3>Введите email</h3>
+<form action="/03_result_post_email.php" method="post">
+	<input id="user_email" type="email" name="user_email" placeholder="Email">
+	<input type="submit" value="Отправить (POST)">
+</form>
+
 
 
 
