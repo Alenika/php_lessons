@@ -43,6 +43,27 @@
 </form>
 
 
+<h3>Калькулятор (умножение)</h3>
+
+<?php
+	$result = null;
+	
+	if (isset($_GET['num1'], $_GET['num2'])) {
+		$result = (float)$_GET['num1'] * (float)$_GET['num2'];
+	}
+?>
+
+<form action="" method="get">
+	<label for="num1">Введите первое число</label>
+	<input id="num1" type="number" name="num1" value="<?= $_GET['num1'] ?? ''?>" placeholder="Число 1">
+	<label for="num2">Введите второе число</label>
+	<input id="num2" type="number" name="num2" value="<?= $_GET['num2'] ?? ''?>" placeholder="Число 2">
+	<input type="submit" value="Умножить">
+</form>
+
+<?php if ($result !== null): ?>
+<p>Результат: <?= $result ?></p>
+<?php endif; ?>
 
 
 
