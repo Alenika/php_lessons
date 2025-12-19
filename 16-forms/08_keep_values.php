@@ -65,7 +65,31 @@
 <p>Результат: <?= $result ?></p>
 <?php endif; ?>
 
+<h3>О себе</h3>
 
+<?php
+	$age_message = null;
+	if (isset($_POST['user_name'], $_POST['year'])) {
+		$current_year = 2025;
+		$user_year = (int)$_POST['year'];
+		$diff = $current_year - $user_year;
+		
+		$age_message = htmlspecialchars($_POST['user_name']) . ", вам в 2025 году исполняется: " . $diff;
+	}
+?>
+
+<h3>Анкета</h3>
+<form action="" method="post">
+	<label for="user_name">Имя:</label>
+	<input id="user_name" type="text" name="user_name" value="<?= $_POST['user_name'] ?? '' ?>">
+	<label for="year">Год рождения:</label>
+	<input id="year" type="number" name="year" value="<?= $_POST['year'] ?? '' ?>">
+	<input type="submit" value="Узнать возраст">
+</form>
+
+<?php if ($age_message) : ?>
+<p> <?= $age_message ?></p>
+<?php endif; ?>
 
 	
 
