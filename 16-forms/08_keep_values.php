@@ -91,6 +91,29 @@
 <p> <?= $age_message ?></p>
 <?php endif; ?>
 
+<h3>Конвертер валют</h3>
+<?php
+	$rub_result = null;
+	$rate = 100;
+	
+	if (isset($_POST['usd'])) {
+		$usd_amount = (int)$_POST['usd'];
+		$rub_result = $usd_amount * $rate;
+		
+		$message = "Сумма в рублях составит: $rub_result";
+		
+	}
+?>
+
+<form action="" method="post">
+	<label for="usd">Сумма в долларах:</label>
+	<input id="usd" type="number" name="usd" value="<?= $_POST['usd_amount'] ?? '' ?>">
+	<input type="submit" value="Конвертировать">
+</form>
+
+<?php if ($message) : ?>
+<p><?= $message ?></p>
+<?php endif; ?>
 	
 
 
