@@ -114,6 +114,31 @@
 <?php if ($message) : ?>
 <p><?= $message ?></p>
 <?php endif; ?>
+
+<h3>Калькулятор стоимости доставки</h3>
+
+<?php
+	$weight = null; // кг
+	$distance = null; // км
 	
+	if (isset($_POST['weight'], $_POST['distance'])) {
+		$weight = (int)$_POST['weight'];
+		$distance = (int)$_POST['distance'];
+		
+		$total = 500 + ($weight * 50) + ($distance * 10);
+		$message = "Стоимость доставки: $total руб.";
+	}
+?>
 
+<form action="" method="post">
+	<label for="weight">Вес посылки в килограммах:</label>
+	<input id="weight" type="number" name="weight" value="<?= $_POST['weight'] ?? '' ?>">
+	<br><br>
+	<label for="distance">Расстояние в километрах</label>
+	<input id="distance" type="number" name="distance" value="<?= $_POST['distance'] ?? '' ?>">
+	<input type="submit" value="Рассчитать">
+</form>
 
+<?php if ($message) : ?>
+<p><?php echo $message ?>
+<?php endif; ?>
