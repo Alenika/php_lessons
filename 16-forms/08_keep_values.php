@@ -62,7 +62,7 @@
 </form>
 
 <?php if ($result !== null): ?>
-<p>Результат: <?= $result ?></p>
+	<p>Результат: <?= $result ?></p>
 <?php endif; ?>
 
 <h3>О себе</h3>
@@ -88,7 +88,7 @@
 </form>
 
 <?php if ($age_message) : ?>
-<p> <?= $age_message ?></p>
+	<p> <?= $age_message ?></p>
 <?php endif; ?>
 
 <h3>Конвертер валют</h3>
@@ -112,7 +112,7 @@
 </form>
 
 <?php if ($message) : ?>
-<p><?= $message ?></p>
+	<p><?= $message ?></p>
 <?php endif; ?>
 
 <h3>Калькулятор стоимости доставки</h3>
@@ -140,5 +140,29 @@
 </form>
 
 <?php if ($message) : ?>
-<p><?php echo $message ?>
+	<p><?php echo $message ?></p>
 <?php endif; ?>
+
+<h3>Форма бронирования</h3>
+
+<?php
+	if (isset ($_POST['days'], $_POST['breakfast_price'])) {
+		$days = (float)$_POST['days'];
+		$breakfast_price = (float)$_POST['breakfast_price'];
+		$total_cost = (3000 + $breakfast_price) * $days;
+		$message = "Итоговая стоимость бронирования: $total_cost руб.";
+	}
+?>
+
+<form action="" method="post">
+	<label for="days">Количество дней</label>
+	<input id="days" type="number" name="days" value="<?= $_POST['days'] ?? '' ?>">
+	<label for="breakfast_price">Цена завтрака в день</label>
+	<input id="breakfast_price" type="number" name="breakfast_price" value="<?= $_POST['breakfast_price'] ?? '' ?>">
+	<input type="submit" value="Рассчитать">
+</form>
+
+<?php if ($message) : ?>
+	<p><?= $message ?></p>
+<?php endif; ?>
+
