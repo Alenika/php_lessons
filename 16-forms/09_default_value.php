@@ -76,3 +76,28 @@
 	<p><?= $resultMessage ?></p>
 <?php endif; ?>
 
+<h3>Форма редактирования профиля (город)</h3>
+
+<?php
+	$default_city = 'Москва';
+	$message = null;
+	
+	$user_name = $_POST['user_name'] ?? '';
+	$user_city = $_POST['user_city'] ?? $default_city;
+	
+	if (isset($_POST['user_name'], $_POST['user_city'])) {
+		$message = "Данные обновлены! Имя: $user_name, Город: $user_city";
+	}
+?>
+
+<form action="" method="post">
+	<label for="user_name">Введите имя:</label>
+	<input id="user_name" type="text" name="user_name" value="<?= $user_name ?>">
+	<label for="user_city">Введите город:</label>
+	<input id="user_city" type="text" name="user_city" value="<?= $user_city ?>">
+	<input type="submit" value="Отправить">
+</form>
+
+<?php if ($message) : ?>
+	<p><?= $message ?></p>
+<?php endif; ?>
