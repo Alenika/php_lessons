@@ -101,3 +101,29 @@
 <?php if ($message) : ?>
 	<p><?= $message ?></p>
 <?php endif; ?>
+
+<h3>Форма настроек профиля</h3>
+
+<?php
+	$default_steps = 10000;
+	$username = $_POST['username'] ?? '';
+	$step_goal = $_POST['step_goal'] ?? $default_steps;
+	$userMessage = null;
+	
+	if (isset($_POST['username'], $_POST['step_goal'])) {
+		$userMessage = "Настройки сохранены! Ник: $username, Цель: $step_goal шагов";
+	}
+
+
+?>
+
+<form action="" method="post">
+	<input id="username" type="text" name="username" value="<?= $username ?>">
+	<input id="step_goal" type="number" name="step_goal" value="<?= $step_goal ?>">
+	<input type="submit" value="Отправить">
+</form>
+
+<?php if ($userMessage) : ?>
+	<p><?= $userMessage ?></p>
+<?php endif; ?>
+
