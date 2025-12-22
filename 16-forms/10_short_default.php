@@ -4,6 +4,7 @@
 	 */
 
 	// ⊗ppPmFmVRShC
+	// 303 of 447
 	
 	/* ------------- №1 ------------- */
 	$year  = $_GET['year']  ?? date('Y');
@@ -29,5 +30,36 @@
 		
 		echo "До Нового Года осталось $daysRemaining дней.";
 	}
+?>
 
+<h3>Планирование тренировки</h3>
+
+<?php
+	$currentHour = date('H');
+	$currentMin = date('i');
 	
+	$hour = $_GET['hour'] ?? $currentHour;
+	$minute = $_GET['minute'] ?? $currentMin;
+	$duration = $_GET['duration'] ?? '60';
+?>
+
+<form action="" method="get">
+	<label>Начало (ч:мин):</label>
+	<input id="hour" type="number" name="hour" value="<?= $hour ?>" min="0" max="23">
+    <input id="minute" type="number" name="minute" value="<?= $minute ?>" min="0" max="59">
+	
+	<br><br>
+	<label for="duration">Длительность (мин):</label>
+	<input id="duration" type="number" name="duration" value="<?= $duration ?>">
+	
+	<input type="submit" value="Рассчитать окончание">
+</form>
+
+<?php
+	if (isset($_GET['hour'], $_GET['minute'], $_GET['duration'])) {
+		$startTime = mktime($hour, $minute, 0, date('m'), date('d'), date('Y'));
+		$endTime = $startTime + ($duration * 60);
+		
+		echo  "Тренировка закончится в " . date("H:i", $endTime);
+	}
+?>
