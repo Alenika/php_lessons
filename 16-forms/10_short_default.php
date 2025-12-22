@@ -63,3 +63,29 @@
 		echo  "Тренировка закончится в " . date("H:i", $endTime);
 	}
 ?>
+
+<h3>Калькулятор времени до конца рабочего дня</h3>
+
+<?php
+	$defaultStart = '09';
+	$defaultDuration = '8';
+	
+	$startDay = $_GET['startDay'] ?? $defaultStart;
+	$durationDay = $_GET['durationDay'] ?? $defaultDuration;
+?>
+
+<form action="" method="get">
+	<label for="startDay">Время начала работы (час):</label>
+	<input id="startDay" type="text" name="startDay" value="<?= $startDay ?>">
+	<br><br>
+	<label for="durationDay">Продолжительность смены в часах:</label>
+	<input id="durationDay" type="text" name="durationDay" value="<?= $durationDay ?>">
+	<input type="submit" value="Рассчитать">
+</form>
+
+<?php
+	if (isset($_GET['startDay'], $_GET['durationDay'])) {
+		$endDay = (int)$startDay + (int)$durationDay;
+		$message = "Ваш рабочий день закончится в $endDay:00";
+		echo "<p>$message</p>";
+	}
