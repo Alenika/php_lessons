@@ -26,3 +26,31 @@ if (isset($_POST['feedback'])) {
 <?php if ($message) : ?>
 	<p><?= $message ?></p>
 <?php endif; ?>
+
+
+<h3>О себе</h3>
+<?php
+	$defaultPhrase = "Информация о пользователе пока не заполнена.";
+	$bio = $_POST['bio'] ?? $defaultPhrase;
+	$messageAboutMe = null;
+	
+	if (!empty($_POST['bio'])) {
+		$bio = $_POST['bio'];
+	} else {
+		$bio = $defaultPhrase;
+	}
+	
+	if (isset($_POST['bio']) && $_POST['bio'] !== $defaultPhrase && trim($_POST['bio']) !== '') {
+		$messageAboutMe = "Информация о пользователе сохранена.";
+	}
+?>
+
+<form action="" method="post">
+	<label for="bio">Введите информацию о себе:</label><br>
+	<textarea id="bio" name="bio" rows="5" cols="30"><?= $bio ?></textarea>
+	<input type="submit" value="Отправить">
+</form>
+
+<?php if ($messageAboutMe) : ?>
+	<p><?= $messageAboutMe ?></p>
+<?php endif; ?>
