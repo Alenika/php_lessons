@@ -38,20 +38,27 @@ if (!empty($_POST['send_name'])) {
 <?php
 /* --- №2 Анкета подписчика --- */
 $emailRaw = $_POST['email'] ?? '';
-$emailDisplay = (trim($emailRaw) !== '') ? $emailRaw : 'не указан';
-$isSubscribed = isset($_POST['subscribe']) ? 'checked' : '';
 $messageEmail = null;
 
 if (isset($_POST['send_subscribe'])) {
-	if (isset($_POST['subscribe'])) {
-		$messageEmail = "На почту " . htmlspecialchars($emailDisplay) . " будет отправлено письмо";
+	if (trim($emailRaw) === '') {
+		$messageEmail = "Ошибка! Введите email!";
 	} else {
-		$messageEmail = "Вы отказались от подписки для " . htmlspecialchars($emailDisplay);
+		$safeEmail = htmlspecialchars($emailRaw);
+		
+		if (isset($_POST['subscribe'])) {
+			$messageEmail = "На почту $safeEmail будет отправлено письмо";
+		} else {
+			$messageEmail = "Вы отказались от подписки для $safeEmail";
+		}
 	}
 }
+
+$isSubscribed = isset($_POST['subscribe']) ? 'checked' : '';
 ?>
 
-<hr> <h3>Анкета подписчика</h3>
+<hr>
+<h3>Анкета подписчика</h3>
 <form action="" method="post">
 	<label for="email">Ваш Email:</label>
 	<input id="email" type="text" name="email" value="<?= htmlspecialchars($emailRaw) ?>">
@@ -59,7 +66,7 @@ if (isset($_POST['send_subscribe'])) {
 	<input type="checkbox" name="subscribe" <?= $isSubscribed ?>>
 	<label>Я согласен получать рассылку</label>
 	<br><br>
-	<input type="submit" name="send_subscribe" value="Подписаться">
+	<input type="submit" name="send_subscribe" value='Отправить'>
 </form>
 
 <?php if ($messageEmail): ?>
