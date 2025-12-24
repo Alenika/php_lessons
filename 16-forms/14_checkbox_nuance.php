@@ -28,3 +28,30 @@ if (isset($_POST['age_check'])) {
 <?php if ($message): ?>
 	<p><?= $message ?></p>
 <?php endif; ?>
+
+
+<h3>Анкета для рассылки скидок</h3>
+<!-- Нужно спросить пользователя, хочет ли он получить промокод на скидку -->
+
+<?php
+	$message = null;
+	
+	if (isset($_POST['promoCode'])) {
+		if ($_POST['promoCode'] === '1') {
+			$message = "Промокод отправлен вам на почту!";
+		} else {
+			$message = "Очень жаль, вы отказались от скидки";
+		}
+	}
+?>
+
+<form action="" method="post">
+	<input type="hidden" name="promoCode" value="0">
+	<input id="promo" type="checkbox" name="promoCode" value="1">
+	<label for="promo">Хочу получить промокод</label>
+	<input type="submit" value="Отправить">
+</form>
+
+<?php if ($message): ?>
+	<p><?= $message ?></p>
+<?php endif; ?>
