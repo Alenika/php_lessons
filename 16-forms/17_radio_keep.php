@@ -39,3 +39,33 @@
 	
 	<input type="submit" value="Выбрать">
 </form>
+
+<hr>
+<h3>Выбор по умолчанию через тернарный оператор</h3>
+
+<?php
+	$selectedLang = $_POST['language'] ?? 'belarusian';
+?>
+
+<form action="" method="post">
+	<input id="be" type="radio" name="language" value="belarusian"
+	<?= $selectedLang === 'belarusian' ? 'checked' : '' ?>>
+	<label for="be">Belarusian</label>
+	
+	<br><br>
+	
+	<input id="hi" type="radio" name="language" value="hindi"
+	<?= $selectedLang === 'hindi' ? 'checked' : '' ?>>
+	<label for="hi">Hindi</label>
+	
+	<br><br>
+	
+	<input id="eng" type="radio" name="language" value="english"
+		<?= $selectedLang === 'english' ? 'checked' : '' ?>>
+	<label for="eng">English</label>
+	
+	<br><br>
+	
+	<input type="submit" value="Choose">
+</form>
+
