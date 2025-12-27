@@ -51,3 +51,66 @@
 <?php if ($result2): ?>
 	<p>Факториал: <?= $result2 ?></p>
 <?php endif; ?>
+
+
+<h3>3. Делители числа</h3>
+
+<?php
+	$divisors = [];
+	
+	if (!empty($_POST['num_div'])) {
+		$num = $_POST['num_div'];
+		
+		for ($i = 1; $i <= $num; $i++) {
+			if ($num % $i === 0) {
+				$divisors[] = $i;
+			}
+		}
+	}
+?>
+
+<form action="" method="post">
+	<label id="n">Введите число:</label>
+	<input id="n" type="number" name="num_div">
+	
+	<br><br>
+	
+	<input type="submit" value="Найти">
+</form>
+
+<?php if (!empty($divisors)): ?>
+	<p>Делители: <?= implode(', ', $divisors) ?></p>
+<?php endif; ?>
+
+
+<h3>4. Cписок общих делителей двух чисел</h3>
+<?php
+	$commonDivisors =[];
+	
+	if (!empty($_POST['n1']) && !empty($_POST['n2'])) {
+		$n1 = $_POST['n1'];
+		$n2 = $_POST['n2'];
+		
+		$min = min($n1, $n2);
+		
+		for ($i = 1; $i <= $min; $i++) {
+			if ($n1 % $i === 0 && $n2 % $i === 0) {
+				$commonDivisors[] = $i;
+			}
+		}
+	}
+?>
+
+<form action="" method="post">
+	<label for="n1">Введите первое число:</label>
+	<input id="n1" type="number" name="n1" value="<?= $_POST['n1'] ?? '' ?>">
+	<br><br>
+	<label for="n2">Введите второе число:</label>
+	<input id="n2" type="number" name="n2" value="<?= $_POST['n2'] ?? '' ?>">
+	<br><br>
+	<input type="submit" value="Найти">
+</form>
+
+<?php if ($commonDivisors): ?>
+	<p><?= implode(', ', $commonDivisors) ?></p>
+<?php endif; ?>
