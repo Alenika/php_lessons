@@ -1,0 +1,8 @@
+<?php
+
+?>
+
+<aside>
+	sidebar
+</aside>
+
