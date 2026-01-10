@@ -8,7 +8,7 @@
 	
 	if (file_exists($filePath)) {
 		echo "<p>Файл НАЙДЕН!</p>";
-		file_put_contents($filePath, $content);
+		file_put_contents($filePath, $content); // !!! возвращает кол-во записанных байт
 		echo file_get_contents($filePath) . "<br>";
 	} else {
 		echo "<p style='color: #a40000'>Файл НЕ НАЙДЕН!</p>";
