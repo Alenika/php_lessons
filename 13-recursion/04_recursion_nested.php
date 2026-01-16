@@ -1,21 +1,24 @@
 <?php
-	/*
+	/**
 	 * Рекурсия и многомерные структуры в PHP
+	 * ⊗ppPmRcMA
 	 */
-
-	// ⊗ppPmRcMA
+	
+	declare(strict_types=1);
 	
 	/* ------------- №1 ------------- */
-	$arr = [1, 2, 3, [4, 5, [6, 7]], [8, [9, 10]]];
+	echo "<h3>Рекурсия и многомерные структуры в PHP</h3>";
 	
-	function func($arr) {
+	$data = [1, 2, 3, [4, 5, [6, 7]], [8, [9, 10]]];
+	
+	function printMultiArray($arr) {
 		foreach ($arr as $elem) {
 			if (is_array($elem)) {
-				func($elem);
+				printMultiArray($elem);
 			} else {
 				echo $elem;
 			}
 		}
 	}
 	
-	func($arr);
+	printMultiArray($data);
