@@ -1,19 +1,21 @@
 <?php
-	/*
+	/**
 	 * Сумма элементов массива в PHP
+	 * ⊗ppPmRcMAS
 	 */
-
-	// ⊗ppPmRcMAS
 	
-	/* ------------- №1 ------------- */
-	$arr = [1, 2, 3, [4, 5, [6, 7]], [8, [9, 10]]];
+	declare(strict_types=1);
 	
-	function get_sum($array) {
+	/* ------------- №1: Сумма многомерного массива ------------- */
+	echo "<h3>Сумма многомерного массива</h3>";
+	$data = [1, 2, 3, [4, 5, [6, 7]], [8, [9, 10]]];
+	
+	function getSumRecursive(array $array): int {
 		$sum = 0;
 		
 		foreach ($array as $elem) {
 			if (is_array($elem)) {
-				$sum += get_sum($elem);
+				$sum += getSumRecursive($elem);
 			} else {
 				$sum += $elem;
 			}
@@ -22,17 +24,20 @@
 		return $sum;
 	}
 	
-	var_dump(get_sum($arr));
+	echo "Сумма чисел: ";
+	var_dump(getSumRecursive($data));
 	
-	/* ------------- №2 ------------- */
-	$arr = ['a', ['b', 'c', 'd'], ['e', 'f', ['g', ['j', 'k']]]];
+	/* ------------- №2: Склеивание строк из массива ------------- */
+	echo "<h3>Рекурсивно собирает все строковые элементы в одну строку.</h3>";
 	
-	function merge_to_string($array) {
+	$data2 = ['a', ['b', 'c', 'd'], ['e', 'f', ['g', ['j', 'k']]]];
+	
+	function mergeToStringRecursive(array $array): string {
 		$result = '';
 		
 		foreach ($array as $elem) {
 			if (is_array($elem)) {
-				$result .= merge_to_string($elem);
+				$result .= mergeToStringRecursive($elem);
 			} else {
 				$result .= $elem;
 			}
@@ -41,4 +46,5 @@
 		return $result;
 	}
 	
-	echo merge_to_string($arr);
+	echo "\nСклеенная строка: ";
+	echo mergeToStringRecursive($data2);
