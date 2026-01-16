@@ -24,8 +24,6 @@
 	
 	function censorMessages(array $messages): array
 	{
-		$result = [];
-		
 		foreach ($messages as $key => $value) {
 			if (is_array($value)) {
 				$messages[$key] = censorMessages($value);
