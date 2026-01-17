@@ -1,6 +1,10 @@
 <?php
-	/*
-	 * Массивы
+	declare(strict_types=1);
+	
+	/**
+	 * Работа с элементами и ассоциативные массивы
+	 * Доступ по индексам и кастомным ключам
+	 * 54-56 of 447
 	 */
 
 	// ⊗ppPmArDm №1
@@ -9,42 +13,51 @@
 	var_dump($a); // Array
 	
 	// ⊗ppPmArEl №1
+	// №1: Вывод каждого элемента
 	$arr = ['a', 'b', 'c'];
 	echo $arr[0] . '<br>';
 	echo $arr[1] . '<br>';
 	echo $arr[2] . '<br>';
 	
 	// ⊗ppPmArEl №2
+	// №2: Формирование строки 'a+b+c+d'
 	$arr = ['a', 'b', 'c', 'd', 'e'];
 	$str = $arr[0] . '+' . $arr[1] . '+' . $arr[2] . '+' . $arr[3];
 	echo $str . '<br>';
 	
 	// ⊗ppPmArEl - №3
+	// №3: Сумма элементов
 	$arr = [1, 2, 3, 4, 5];
 	$sum = $arr[0] + $arr[1] + $arr[2] + $arr[3] +  $arr[4];
-	echo $sum . '<br>'; // 15
+	echo "Сумма: " . $sum . '<br>'; // 15
 	
 	// ⊗ppPmArEl - №4
+	// №4: Умножение и сложение
 	$arr = [2, 5, 3, 9];
 	// Умножьте первый элемент массива на второй, а третий элемент на четвертый. Результаты сложите, присвойте переменной $res. Выведите на экран значение этой переменной.
 
 	$res = ($arr[0] * $arr[1]) + ($arr[2] * $arr[3]);
-	echo $res . '<br>'; // 37
-
-	/*
+	echo "Результат вычислений (2*5 + 3*9): " . $res . '<br>'; // 37
+	
+	echo "<p>---------------------------</p>";
+	
+	/**
 	 * Ассоциативные массивы
 	 */
 
 	// ⊗ppPmArAs №1
+	// №1: ФИО пользователя
 	$user = [
 		'name' => 'Анна',
 		'surname' => 'Макаревич',
 		'patronymic' => 'Владимирована'
 	];
 	
-	echo $user['surname'] . ' ' . $user['name'] . ' ' . $user['patronymic'] . '<br>';
+	echo "Пользователь: " . $user['surname'] . ' ' . $user['name'] . ' ' . $user['patronymic'] . '<br>';
+	echo "<p>---------------------------</p>";
 	
 	// ⊗ppPmArAs №2
+	// №2: Дни недели с числовыми ключами (от 1 до 7)
 	$daysOfTheWeek = [
 		'1' => 'Понедельник',
 		'2' => 'Вторник',
@@ -55,13 +68,13 @@
 		'7' => 'Воскресенье',
 	];
 	
-	echo $daysOfTheWeek['1'] . '<br>';
+	echo "Первый день: " . $daysOfTheWeek['1'] . '<br>';
 	echo $daysOfTheWeek['2'] . '<br>';
 	echo $daysOfTheWeek['3'] . '<br>';
 	echo $daysOfTheWeek['4'] . '<br>';
 	echo $daysOfTheWeek['5'] . '<br>';
 	echo $daysOfTheWeek['6'] . '<br>';
-	echo $daysOfTheWeek['7'] . '<br>';
+	echo "Седьмой день: " . $daysOfTheWeek['7'] . '<br>';
 
 
 
